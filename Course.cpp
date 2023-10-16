@@ -2,7 +2,7 @@
 // CSIS 137 - Fall 2021 online course
 // Midterm Project
 // 10/11/2021
-//class Course
+// class Course
 
 #include "Course.h"
 #include "Time.h"
@@ -22,82 +22,100 @@ Course::Course(string num, string name, string dayMeet, double unit, Date startD
     startT = startTime;
     endT = endTime;
 }
+
 Course::~Course()
 {
-    cout << "Course has been deleted." << endl;
+
 }
+
 void Course::setCourseNum(string num)
 {
     courseNum = num;
 }
+
 void Course::setCourseName(string name)
 {
     courseName = name;
 }
+
 void Course::setCourseMeet(string meet)
 {
     courseMeet = meet;
 }
+
 void Course::setNumUnits(double u)
 {
     numUnits = u;
 }
+
 void Course::setStartDate(int m, int d, int y)
 {
     startD.setDay(d);
     startD.setMonth(m);
     startD.setYear(y);
 }
+
 void Course::setEndDate(int m, int d, int y)
 {
     endD.setDay(d);
     endD.setMonth(m);
     endD.setYear(y);
 }
+
 void Course::setStartTime(int h, int m, string AMPM)
 {
     startT.setHour(h);
     startT.setMinute(m);
     startT.setAMorPM(AMPM);
 }
+
 void Course::setEndTime(int h , int m, string AMPM)
 {
     endT.setHour(h);
     endT.setMinute(m);
     endT.setAMorPM(AMPM);
 }
+
 string Course::getCourseNum()const
 {
     return courseNum;
 }
+
 string Course::getCourseName()const
 {
     return courseName;
 }
+
 string Course::getCourseMeet()const
 {
     return courseMeet;
 }
+
 double Course::getNumUnits()const
 {
     return numUnits;
 }
+
 Date Course::getStartDate()const
 {
     return startD;
 }
+
 Date Course::getEndDate()const
 {
     return endD;
 }
+
 Time Course::getStartTime()const
 {
     return startT;
 }
+
 Time Course::getEndTime()const
 {
     return endT;
 }
+
 ostream& operator<<(ostream& output, const Course& theCourse)
 {
     output << fixed << setprecision(2)
@@ -109,6 +127,7 @@ ostream& operator<<(ostream& output, const Course& theCourse)
         << "\nDaily Duration: " << theCourse.calcDailyDuration(theCourse.getStartTime(), theCourse.getEndTime()) << " hours\n" << endl;
     return output;
 }
+
 double Course::calcDailyDuration(Time start, Time end) const
 {
     double hours = 0;
